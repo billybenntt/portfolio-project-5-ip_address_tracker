@@ -96,15 +96,14 @@ const Wrapper = styled.div`
 
 
   }
-  
-  
-    @media screen and (min-width: 1400px) {
-      
-          max-width: 1110px;
 
-      
-      
-    }
+
+  @media screen and (min-width: 1400px) {
+
+    max-width: 1110px;
+
+
+  }
 
 
 
