@@ -1,10 +1,9 @@
-import Calculator from './components/Calculator.jsx'
 
-function App() {
+function App () {
+
   return (
     <>
-      <h2>App Component</h2>
-      <Calculator/>
+     <h1>App Component</h1>
     </>
   )
 }
