@@ -1,10 +1,9 @@
+import Home from './pages/Home.jsx'
 
 function App () {
 
   return (
-    <>
-     <h1>App Component</h1>
-    </>
+    <Home/>
   )
 }
 

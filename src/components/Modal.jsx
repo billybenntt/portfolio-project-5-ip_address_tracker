@@ -1,8 +1,10 @@
-function Modal() {
+import { Wrapper } from '../styles/wrappers/Modal.jsx'
+
+function Modal () {
   return (
-    <>
-      <h2>Modal Component</h2>
-    </>
+    <Wrapper>
+      <p>Modal</p>
+    </Wrapper>
   )
 }
 

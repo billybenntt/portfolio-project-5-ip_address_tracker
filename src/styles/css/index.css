@@ -340,9 +340,6 @@ ul {
 }
 
 
-.Toastify__toast {
-    text-transform: capitalize;
-}
 
 @media screen and (min-width: 992px) {
     .coffee-info {

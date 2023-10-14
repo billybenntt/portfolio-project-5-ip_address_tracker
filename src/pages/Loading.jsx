@@ -1,8 +1,10 @@
-function LoadingPage() {
+import { Gradient, Wrapper } from '../assets/wrappers/Loading.jsx'
+
+const LoadingPage = () => {
   return (
-    <>
-      <h2>LoadingPage Component</h2>
-    </>
+    <Wrapper>
+      <Gradient/>
+    </Wrapper>
   )
 }
 

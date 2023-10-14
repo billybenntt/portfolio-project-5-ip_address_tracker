@@ -1,8 +1,11 @@
-function Map() {
+import Wrapper from '../assets/wrappers/Map.jsx'
+
+function Map () {
+
   return (
-    <>
-      <h2>Map Component</h2>
-    </>
+    <Wrapper>
+
+    </Wrapper>
   )
 }
 
