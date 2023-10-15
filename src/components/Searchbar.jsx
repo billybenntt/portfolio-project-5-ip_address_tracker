@@ -1,8 +1,16 @@
-function Searchbar() {
+import { Wrapper } from '../styles/wrappers/Searchbar.jsx'
+import { Input, Button } from '../assets/wrappers/SearchBar.jsx'
+
+function Searchbar () {
   return (
-    <>
-      <h2>Searchbar Component</h2>
-    </>
+    <Wrapper>
+      <form style={{ 'width': '100%', 'height': '100%' }}>
+        <Input
+          type="text"/>
+        <Button type="submit">
+        </Button>
+      </form>
+    </Wrapper>
   )
 }
 
