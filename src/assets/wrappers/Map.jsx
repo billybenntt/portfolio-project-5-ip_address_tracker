@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
-  height: 55%;
-  min-height: 600px;
-  background-color: dodgerblue;
+const Wrapper = styled.section`
+  
+  width: 100vw;
+  height: 640px;
 
-  @media (min-width: 768px) {
-    height: 65%;
+  .map-container {
+    width: 100%;
+    height: 100%;
   }
+
 `
 
 export default Wrapper

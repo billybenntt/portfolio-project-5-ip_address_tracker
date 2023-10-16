@@ -1,16 +1,24 @@
 import Wrapper from '../assets/wrappers/Map.jsx'
-import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
 function Map () {
 
+  const position = [25.0478, 121.5319]
+  const mapAttribution = '<a href="https://www.stadiamaps.com/" target="_blank">StadiaMaps</a>'
+  const mapUrl = 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.{ext}'
+
+
   return (
     <Wrapper>
-      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false} style={{width: "100%", height:"100%"}}>
+      <MapContainer center={position}
+        zoomControl={false}
+        zoom={11} scrollWheelZoom={false} className="map-container">
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution={mapAttribution}
+          url={mapUrl}
+          ext={'png'}
         />
-        <Marker position={[51.505, -0.09]}>
+        <Marker position={position}>
           <Popup>
             A pretty CSS3 popup. <br/> Easily customizable.
           </Popup>
