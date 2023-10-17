@@ -9,7 +9,9 @@ function HomePage () {
   return (
     <Wrapper>
       <section className="header">
-        Header
+        <h4>IP Address Tracker</h4>
+
+        <Searchbar/>
       </section>
 
       <Card/>

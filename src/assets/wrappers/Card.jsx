@@ -15,7 +15,6 @@ const Wrapper = styled.div`
 
 
   @media screen and (min-width: 992px) {
-
     max-width: 1110px;
     height: 161px;
     top: 210px;
