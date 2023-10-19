@@ -2,15 +2,19 @@ import styled from 'styled-components'
 import img from '../images/pattern-bg.png'
 
 const Wrapper = styled.div`
-  position: relative;
-  text-align: center;
+
 
   .header {
+  position: relative;
     background: url(${img}) no-repeat center;
+    text-align: center;
     background-size: cover;
     color: #fff;
-    height: 290px;
+    height: 300px;
+  }
 
+  .header-center {
+    padding-top: 2rem;
   }
 
 

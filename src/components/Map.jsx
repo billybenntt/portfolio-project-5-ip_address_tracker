@@ -12,7 +12,7 @@ function Map () {
     <Wrapper>
       <MapContainer center={position}
         zoomControl={false}
-        zoom={11} scrollWheelZoom={false} className="map-container">
+        zoom={14} scrollWheelZoom={false} className="map-container">
         <TileLayer
           attribution={mapAttribution}
           url={mapUrl}

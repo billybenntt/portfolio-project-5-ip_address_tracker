@@ -7,12 +7,11 @@ const Wrapper = styled.div`
   margin-right: auto;
   left: 0;
   right: 0;
-  top: 140px;
   max-width: 327px;
   height: 294px;
   z-index: 999;
   border-radius: 15px;
-
+  bottom: -161px;
 
   @media screen and (min-width: 992px) {
     max-width: 1110px;
