@@ -1,5 +1,5 @@
 /* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700;800&display=swap');
 
 *,
 ::after,
@@ -12,6 +12,8 @@
 
 html {
     font-size: 100%;
+    font-family: 'Rubik', sans-serif;
+
 }
 
 /*16px*/
@@ -340,7 +342,6 @@ ul {
 .coffee-info a {
     color: var(--primary-500);
 }
-
 
 
 @media screen and (min-width: 992px) {
