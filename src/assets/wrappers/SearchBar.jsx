@@ -9,11 +9,9 @@ const Wrapper = styled.div`
   border-radius: 15px;
   margin-bottom: 1rem;
 
-
   .form-center {
     height: 58px;
     display: flex;
-
   }
 
   .btn-container {
@@ -21,7 +19,6 @@ const Wrapper = styled.div`
     height: 100%;
     width: 58px;
   }
-
 
   .search-input {
     border: 1px solid black;
