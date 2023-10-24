@@ -23,8 +23,9 @@ const Wrapper = styled.div`
   .card {
     text-align: left;
     flex: 1;
-    padding-left: 2rem;
+    padding-left: 1rem;
 
+    margin-bottom: 0;
   }
 
   .card:last-child {
@@ -33,15 +34,25 @@ const Wrapper = styled.div`
 
 
   .card-title {
-    font-size: 14px;
-    margin-bottom: 0.5rem;
-    font-weight: bolder;
+    color: #727171;
+    font-family: 'Rubik', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.75px;
     text-transform: uppercase;
-    color: gray;
+    margin-bottom: 0.5rem;
   }
 
   .card-data {
-    font-size: 24px;
+    color: #2C2C2C;
+    font-family: 'Rubik', serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: -0.132px;
   }
 
 
@@ -57,7 +68,30 @@ const Wrapper = styled.div`
 
 
     .card {
-      border-right: 1px solid #c5bebe;
+      height: 75px;
+      border-right: 1.5px solid #c5bebe;
+    }
+
+    .card-title {
+      color: #727171;
+      font-family: 'Rubik', serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 1.75px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .card-data {
+      color: #2C2C2C;
+      font-family: 'Rubik', serif;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 30px;
+      letter-spacing: -0.232px;
     }
 
 
