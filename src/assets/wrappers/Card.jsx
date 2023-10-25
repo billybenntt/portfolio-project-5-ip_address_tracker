@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   max-width: 327px;
   z-index: 999;
   border-radius: 15px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 50px 50px -25px rgba(0, 0, 0, 0.10);
 
   .card-center {
@@ -36,7 +36,7 @@ const Wrapper = styled.div`
   .card-title {
     color: #727171;
     font-family: 'Rubik', serif;
-    font-size: 16px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -48,7 +48,7 @@ const Wrapper = styled.div`
   .card-data {
     color: #2C2C2C;
     font-family: 'Rubik', serif;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 30px;
@@ -60,6 +60,7 @@ const Wrapper = styled.div`
     max-width: 1110px;
     height: 161px;
     top: 210px;
+    padding: 2rem;
 
     .card-center {
       display: flex;
@@ -75,7 +76,6 @@ const Wrapper = styled.div`
     .card-title {
       color: #727171;
       font-family: 'Rubik', serif;
-      font-size: 12px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;

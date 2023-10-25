@@ -1,4 +1,5 @@
 import Wrapper from '../assets/wrappers/SearchBar.jsx'
+import Chevron from '../assets/images/chevronIcon.jsx'
 
 function Searchbar () {
   return (
@@ -9,8 +10,7 @@ function Searchbar () {
           className="search-input"/>
 
         <div className="btn-container">
-
-
+          <Chevron/>
         </div>
 
 
