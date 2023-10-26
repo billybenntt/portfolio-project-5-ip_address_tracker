@@ -17,13 +17,15 @@ const Wrapper = styled.div`
 
   .btn-container {
     background-color: black;
-    display: flex;
     cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    display: grid;
+    position: relative;
+    place-items: center;
+    
     width: 58px;
   }
+  
+ 
 
   .search-input {
     width: 100%;
@@ -40,11 +42,6 @@ const Wrapper = styled.div`
 
   @media screen and (min-width: 992px) {
     width: 555px;
-
-
-
-
-
 
     .search-input {
       font-size: 18px;

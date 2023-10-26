@@ -1,10 +1,11 @@
 import styled from 'styled-components'
-import img from '../images/pattern-bg.png'
+import imgDesktop from '../images/pattern-bg-desktop.png'
+import imgMobile from '../images/pattern-bg-mobile.png'
 
 const Wrapper = styled.div`
   .header {
     position: relative;
-    background: url(${img}) no-repeat center;
+    background: url(${imgMobile}) no-repeat center;
     text-align: center;
     background-size: cover;
     color: #fff;
@@ -14,6 +15,19 @@ const Wrapper = styled.div`
   .header-center {
     padding-top: 2rem;
   }
+  
+  
+  
+   @media screen and (min-width: 992px) {
+
+   .header {
+    background: url(${imgDesktop}) no-repeat center;
+     background-size: cover;
+  }
+
+  }
+  
+  
 
 `
 

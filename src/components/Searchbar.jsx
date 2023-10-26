@@ -1,5 +1,5 @@
 import Wrapper from '../assets/wrappers/SearchBar.jsx'
-import Chevron from '../assets/images/chevronIcon.jsx'
+import { FaChevronRight } from 'react-icons/fa'
 
 function Searchbar () {
   return (
@@ -10,7 +10,7 @@ function Searchbar () {
           className="search-input"/>
 
         <div className="btn-container">
-          <Chevron/>
+          <FaChevronRight/>
         </div>
 
 

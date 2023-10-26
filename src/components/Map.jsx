@@ -8,6 +8,7 @@ function Map () {
   const mapUrl = 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.{ext}'
 
 
+
   return (
     <Wrapper>
       <MapContainer center={position}
