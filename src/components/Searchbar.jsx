@@ -13,7 +13,6 @@ function Searchbar () {
           <FaChevronRight/>
         </div>
 
-
       </form>
     </Wrapper>
   )

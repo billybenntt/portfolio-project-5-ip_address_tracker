@@ -57,7 +57,7 @@ const Wrapper = styled.div`
 
 
   @media screen and (min-width: 992px) {
-    max-width: 1110px;
+    max-width: 900px;
     height: 161px;
     top: 210px;
     padding: 2rem;
@@ -96,6 +96,16 @@ const Wrapper = styled.div`
 
 
   }
+  
+  
+    @media screen and (min-width: 1400px) {
+      
+          max-width: 1110px;
+
+      
+      
+    }
+
 
 
 
