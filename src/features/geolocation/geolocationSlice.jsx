@@ -1,8 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  isLoading: false
+  isLoading: false,
+  search: "",
 }
+
+const url = `http://ip-api.com/json/60.251.149.199`
+
+
 
 // THUNK
 
@@ -23,11 +28,31 @@ const geoLocationSlice = createSlice({
   extraReducers: {
     [getGeoLocation.pending]: (state) => {
       state.isLoading = true
+    },
+    [getGeoLocation.fulfilled]: (state, action) => {
+      state.isLoading = true
+    },
+    [getGeoLocation.rejected]: (state, action) => {
+      state.isLoading = true
     }
 
   },
 
-  reducers: {}
+  reducers: {
+    handleChange: (state, action) =>{
+      console.log("State", state.isLoading)
+      console.log("Action", action)
+
+    },
+
+
+
+
+
+  }
 })
 
+
+
 export default geoLocationSlice.reducer
+export const { handleChange } = geoLocationSlice.actions
