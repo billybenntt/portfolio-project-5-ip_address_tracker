@@ -37,6 +37,9 @@ const geoLocationSlice = createSlice({
     },
     [getGeoLocation.fulfilled]: (state, action) => {
       state.isLoading = true
+
+
+
     },
     [getGeoLocation.rejected]: (state, action) => {
       state.isLoading = true
