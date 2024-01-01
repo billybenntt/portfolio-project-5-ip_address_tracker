@@ -63,7 +63,7 @@ const geoLocationSlice = createSlice({
     handleChange: (state, action) => {
       const { payload } = action
       console.log('new state=>', state.search)
-      state.search['ip'] = payload.inputValue
+      state.search['query'] = payload.inputValue
     },
 
     handleSubmit: (state, action) => {
