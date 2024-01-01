@@ -1,7 +1,8 @@
 import Wrapper from '../assets/wrappers/SearchBar.jsx'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { FaChevronRight } from 'react-icons/fa'
 import { handleChange } from '../features/geolocation/geolocationSlice.jsx'
+import { getGeoLocation } from '../features/geolocation/geolocationSlice.jsx'
 
 
 function Searchbar () {
@@ -11,13 +12,14 @@ function Searchbar () {
   const handleSubmit = (event) => {
     event.preventDefault()
 
+    dispatch(getGeoLocation())
+
+
   }
 
   const handleSearch = (event) => {
     const inputName = event.target.name
     const inputValue = event.target.value
-
-
     dispatch(handleChange({ inputName, inputValue }))
   }
 
@@ -30,7 +32,7 @@ function Searchbar () {
           className="search-input"/>
 
 
-        <div className="btn-container">
+        <div className="btn-container" onClick={handleSubmit}>
           <FaChevronRight/>
         </div>
 

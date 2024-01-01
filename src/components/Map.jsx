@@ -1,12 +1,15 @@
 import Wrapper from '../assets/wrappers/Map.jsx'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import { useSelector } from 'react-redux'
 
 function Map () {
 
-  const position = [25.0478, 121.5319]
+const { latitude, longitude } = useSelector(store => store.geolocation.search);
+const position = [latitude, longitude];
+
+
   const mapAttribution = '<a href="https://www.stadiamaps.com/" target="_blank">StadiaMaps</a>'
   const mapUrl = 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.{ext}'
-
 
 
   return (
