@@ -3,14 +3,14 @@ import { useSelector } from 'react-redux'
 
 const Card = () => {
 
-  const { location, timezone, isp } = useSelector(store => store.geolocation.search)
+  const { location, timezone, isp, ip } = useSelector(store => store.geolocation.search)
 
   return (
     <Wrapper>
       <div className="card-center">
         <div className="card">
           <h5 className="card-title">IP Address</h5>
-          <p className="card-data">192.168.1.223</p>
+          <p className="card-data">{ip}</p>
         </div>
         <div className="card">
           <h5 className="card-title">Location</h5>
