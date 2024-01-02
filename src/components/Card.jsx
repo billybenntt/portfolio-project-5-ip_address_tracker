@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux'
 
 const Card = () => {
 
-  const { location, timezone, isp, ip } = useSelector(store => store.geolocation.search)
+  const { country, city, offset, isp, ip } = useSelector(store => store.geolocation.search)
+
+  const timezone = `UTC ${offset}`
 
   return (
     <Wrapper>
@@ -14,7 +16,7 @@ const Card = () => {
         </div>
         <div className="card">
           <h5 className="card-title">Location</h5>
-          <p className="card-data">{location}</p>
+          <p className="card-data">{`${city}, ${country}`}</p>
         </div>
         <div className="card">
           <h5 className="card-title">Timezone</h5>

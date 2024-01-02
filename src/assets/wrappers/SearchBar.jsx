@@ -21,7 +21,6 @@ const Wrapper = styled.div`
     display: grid;
     position: relative;
     place-items: center;
-    
     width: 58px;
   }
   
