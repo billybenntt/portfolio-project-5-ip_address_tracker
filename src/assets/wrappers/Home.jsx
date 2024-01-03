@@ -3,6 +3,10 @@ import imgDesktop from '../images/pattern-bg-desktop.png'
 import imgMobile from '../images/pattern-bg-mobile.png'
 
 const Wrapper = styled.div`
+
+
+
+  
     .header {
         position: relative;
         background: url(${imgMobile}) no-repeat center;
@@ -11,6 +15,8 @@ const Wrapper = styled.div`
         color: #fff;
         height: 300px;
     }
+
+
     .header-center {
         padding-top: 2rem;
     }

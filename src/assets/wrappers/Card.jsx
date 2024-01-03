@@ -14,6 +14,9 @@ const Wrapper = styled.div`
     padding: 1.5rem;
     box-shadow: 0 50px 50px -25px rgba(0, 0, 0, 0.10);
 
+
+    
+    
     .card-center {
         display: flex;
         flex-direction: column;
