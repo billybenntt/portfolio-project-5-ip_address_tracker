@@ -5,6 +5,7 @@ import defaultData from '../../utils/defaultData.js'
 const initialState = {
   isLoading: false,
   search: {
+    status: '',
     query: '',
     ip: '60.251.149.222',
     country: 'Taiwan',
@@ -20,29 +21,21 @@ const initialState = {
 const getGeoLocation = createAsyncThunk('geolocation/getGeoLocation',
   async (_, thunkAPI) => {
     try {
-
       const { geolocation: { search: { query } } } = thunkAPI.getState()
       const locationResponse = await fetch(`http://ip-api.com/json/${query}?fields=33579985`)
       const locationData = await locationResponse.json()
 
       if (locationData.status === 'success') {
-        console.log(locationData.status)
-        console.log(query)
-        console.log(locationData)
-        console.log('SUCCESS')
-
-        addDataToLocalStorage(defaultData[1])
-        return defaultData[1]
+        const { country, city, lat, lon, offset, isp, query } = locationData
+        const newData = { ip: query, country, city, lat, lon, offset, isp, query }
+        addDataToLocalStorage(newData)
+        return newData
 
       } else {
-
         console.log('FAIL')
         return defaultData[0]
 
       }
-
-      // Default case
-      return locationData
 
     } catch (e) {
       return thunkAPI.rejectWithValue('There was an error')
@@ -79,18 +72,17 @@ const geoLocationSlice = createSlice({
     [getGeoLocation.fulfilled]: (state, { payload }) => {
       console.log('getGeoLocation Reducer Fulfilled =>', payload)
       state.search = payload
-
       state.isLoading = false
     },
     [getGeoLocation.rejected]: (state, action) => {
-      state.isLoading = true
+      state.isLoading = false
     },
     [getAllData.pending]: (state) => {
       state.isLoading = true
     },
     [getAllData.fulfilled]: (state, { payload }) => {
-      state.search = payload
       state.isLoading = false
+      state.search = payload
     },
     [getAllData.rejected]: (state, action) => {
       state.isLoading = true
@@ -98,9 +90,7 @@ const geoLocationSlice = createSlice({
   },
 
   reducers: {
-    handleChange: (state, action) => {
-      const { payload } = action
-      console.log('Handle Change Reducer =>', state.search)
+    handleChange: (state, { payload }) => {
       state.search['query'] = payload.inputValue
     },
     handleSubmit: (state, action) => {

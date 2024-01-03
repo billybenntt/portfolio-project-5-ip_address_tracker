@@ -5,16 +5,13 @@ import { useSelector } from 'react-redux'
 function Map () {
 
   const { lat, lon } = useSelector(store => store.geolocation.search)
-
   const position = [lat, lon]
 
 
-
-
-  const mapAttribution = '<a href="https://www.stadiamaps.com/" target="_blank">StadiaMaps</a>'
-  const mapUrl = 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.{ext}'
  // re render map
   const key = `${lat}-${lon}`
+  const mapAttribution = '<a href="https://www.stadiamaps.com/" target="_blank">StadiaMaps</a>'
+  const mapUrl = 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.{ext}'
 
   return (
     <Wrapper>
@@ -22,7 +19,6 @@ function Map () {
         key={key}
         zoomControl={true}
         zoom={14} scrollWheelZoom={false} className="map-container">
-
 
         <TileLayer
           attribution={mapAttribution}

@@ -2,7 +2,7 @@ import Wrapper from '../assets/wrappers/SearchBar.jsx'
 import { useDispatch } from 'react-redux'
 import { FaChevronRight } from 'react-icons/fa'
 import { handleChange } from '../features/geolocation/geolocationSlice.jsx'
-import { getAllData, getGeoLocation } from '../features/geolocation/geolocationSlice.jsx'
+import { getGeoLocation } from '../features/geolocation/geolocationSlice.jsx'
 
 function Searchbar () {
 
@@ -10,10 +10,7 @@ function Searchbar () {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-
     dispatch(getGeoLocation())
-
-
   }
 
   const handleSearch = (event) => {
