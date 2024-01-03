@@ -7,6 +7,7 @@ const Card = () => {
 
   const timezone = `UTC ${offset}`
 
+
   return (
     <Wrapper>
       <div className="card-center">

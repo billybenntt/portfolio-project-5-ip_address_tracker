@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { addDataToLocalStorage, getDataFromLocalStorage } from '../../utils/localStorage.js'
-import { LiaObjectGroup } from 'react-icons/lia'
+import defaultData from '../../utils/defaultData.js'
 
 const initialState = {
   isLoading: false,
@@ -20,14 +20,30 @@ const initialState = {
 const getGeoLocation = createAsyncThunk('geolocation/getGeoLocation',
   async (_, thunkAPI) => {
     try {
-      const { geolocation: { search: { query } } } = thunkAPI.getState()
 
-      console.log(query)
-      // const locationResponse = await fetch(`http://ip-api.com/json/${ip}?fields=33579985`)
-      // const locationData = await locationResponse.json()
-      // const { country, city, lat, lon, offset, isp, query } = locationData
-      // const newData = {country, city, lat, lon, offset, isp, query }
-      // addDataToLocalStorage(newData)
+      const { geolocation: { search: { query } } } = thunkAPI.getState()
+      const locationResponse = await fetch(`http://ip-api.com/json/${query}?fields=33579985`)
+      const locationData = await locationResponse.json()
+
+      if (locationData.status === 'success') {
+        console.log(locationData.status)
+        console.log(query)
+        console.log(locationData)
+        console.log('SUCCESS')
+
+        addDataToLocalStorage(defaultData[1])
+        return defaultData[1]
+
+      } else {
+
+        console.log('FAIL')
+        return defaultData[0]
+
+      }
+
+      // Default case
+      return locationData
+
     } catch (e) {
       return thunkAPI.rejectWithValue('There was an error')
     }
@@ -60,8 +76,11 @@ const geoLocationSlice = createSlice({
     [getGeoLocation.pending]: (state) => {
       state.isLoading = true
     },
-    [getGeoLocation.fulfilled]: (state, action) => {
-      state.isLoading = true
+    [getGeoLocation.fulfilled]: (state, { payload }) => {
+      console.log('getGeoLocation Reducer Fulfilled =>', payload)
+      state.search = payload
+
+      state.isLoading = false
     },
     [getGeoLocation.rejected]: (state, action) => {
       state.isLoading = true
@@ -81,10 +100,11 @@ const geoLocationSlice = createSlice({
   reducers: {
     handleChange: (state, action) => {
       const { payload } = action
-      console.log('new state=>', state.search)
+      console.log('Handle Change Reducer =>', state.search)
       state.search['query'] = payload.inputValue
     },
     handleSubmit: (state, action) => {
+      console.log('Handle Submit Reducer =>', state.search)
       console.log('search value is', state.search)
     }
   }
