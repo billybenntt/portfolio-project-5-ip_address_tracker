@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { addDataToLocalStorage, getDataFromLocalStorage } from '../../utils/localStorage.js'
 import defaultData from '../../utils/defaultData.js'
-
-
+import { openModal } from '../modal/modalSlice.jsx'
 
 /// INITIAL STATE
 const initialState = {
@@ -25,6 +24,7 @@ const getGeoLocation = createAsyncThunk('geolocation/getGeoLocation',
   async (_, thunkAPI) => {
     try {
       const { geolocation: { search: { query } } } = thunkAPI.getState()
+
       const locationResponse = await fetch(`http://ip-api.com/json/${query}?fields=33579985`)
       const locationData = await locationResponse.json()
 
@@ -35,7 +35,9 @@ const getGeoLocation = createAsyncThunk('geolocation/getGeoLocation',
         return newData
 
       } else {
-        console.log('FAIL')
+
+        thunkAPI.dispatch(openModal())
+
         return defaultData[0]
 
       }
@@ -65,8 +67,6 @@ const getAllData = createAsyncThunk('geolocation/getAllData', async (_, thunkAPI
     return thunkAPI.rejectWithValue('There was an error')
   }
 })
-
-
 
 const geoLocationSlice = createSlice({
   name: 'geolocation',
