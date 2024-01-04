@@ -13,8 +13,8 @@ function Modal () {
 
   return (
     <Wrapper>
-      <div className="modal-container">
-        <div className="modal">
+      <div className="modal-background">
+        <div className="modal show-animation">
           <div className="modal-center">
             <button className="close">✖</button>
             <img src={warningIcon} alt="cookies-img"/>

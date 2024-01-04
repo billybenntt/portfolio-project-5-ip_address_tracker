@@ -35,11 +35,8 @@ const getGeoLocation = createAsyncThunk('geolocation/getGeoLocation',
         return newData
 
       } else {
-
         thunkAPI.dispatch(openModal())
-
         return defaultData[0]
-
       }
 
     } catch (e) {

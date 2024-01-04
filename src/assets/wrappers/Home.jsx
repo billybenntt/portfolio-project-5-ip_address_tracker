@@ -4,9 +4,6 @@ import imgMobile from '../images/pattern-bg-mobile.png'
 
 const Wrapper = styled.div`
 
-
-
-  
     .header {
         position: relative;
         background: url(${imgMobile}) no-repeat center;

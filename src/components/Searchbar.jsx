@@ -21,7 +21,7 @@ function Searchbar () {
 
   return (
     <Wrapper>
-      <form className="form-center">
+      <form className="form-center" onSubmit={handleSubmit}>
         <input type="text"
           onChange={handleSearch}
           placeholder="Search for any IP address or domain"

@@ -1,26 +1,36 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-    /* MODAL CONTAINER */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99999;
-    background-color: rgba(0, 0, 0, 0.5);
 
+    .modal-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5000;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+
+    // MODAL MAIN
     .modal {
         border-radius: 15px;
         background-color: #fff;
         height: 100px;
         min-width: 100px;
         position: absolute;
-        top: 50%;
+        top: 20%;
         left: 50%;
-        /* Center Modal */
-        transform: translate(-50%, -300%);
+
     }
+
+    .modal.show-animation {
+        animation: showModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+
+    // MODAL CONTENT
 
     .modal-center {
         width: 320px;
@@ -48,6 +58,7 @@ const Wrapper = styled.div`
         font-size: 16px;
         color: white;
     }
+
     .modal-center .close {
         width: 20px;
         font-size: 20px;
@@ -56,6 +67,19 @@ const Wrapper = styled.div`
         background-color: transparent;
         border: none;
         margin-bottom: 1px;
+    }
+
+
+    // MODAL ANIMATION
+
+    @keyframes showModal {
+        0% {
+            transform: translate(-0%, -5000%);
+        }
+
+        100% {
+            transform: translate(-50%, -50%);
+        }
     }
 
 `
