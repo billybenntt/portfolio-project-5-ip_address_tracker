@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 
 
     // MODAL MAIN
+
     .modal {
         border-radius: 15px;
         background-color: #fff;
@@ -22,12 +23,13 @@ const Wrapper = styled.div`
         position: absolute;
         top: 20%;
         left: 50%;
-
     }
 
     .modal.show-animation {
         animation: showModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     }
+
+
 
 
     // MODAL CONTENT
@@ -49,7 +51,7 @@ const Wrapper = styled.div`
         margin-bottom: 15px;
     }
 
-    .modal-center .accept {
+    .modal-btn {
         background-color: #E35B65;
         border: none;
         border-radius: 5px;
@@ -57,7 +59,19 @@ const Wrapper = styled.div`
         padding: 14px;
         font-size: 16px;
         color: white;
+        cursor: pointer;
     }
+
+    .modal-btn:active {
+        background-color: #dc143c;
+        transition: all 0.1s ease-in;
+    }
+
+    .modal-btn:hover {
+        transition: all 0.1s ease-in;
+        transform: scale(1.1);
+    }
+
 
     .modal-center .close {
         width: 20px;
@@ -81,6 +95,9 @@ const Wrapper = styled.div`
             transform: translate(-50%, -50%);
         }
     }
+
+
+
 
 `
 export default Wrapper
