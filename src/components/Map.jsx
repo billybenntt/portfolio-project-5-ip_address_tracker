@@ -19,13 +19,11 @@ function Map () {
         key={key}
         zoomControl={true}
         zoom={14} scrollWheelZoom={false} className="map-container">
-
         <TileLayer
           attribution={mapAttribution}
           url={mapUrl}
           ext={'png'}
         />
-
         <Marker position={position}>
           <Popup>
             A pretty CSS3 popup. <br/> Easily customizable.

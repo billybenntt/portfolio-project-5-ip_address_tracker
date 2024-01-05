@@ -25,11 +25,17 @@ const Wrapper = styled.div`
         left: 50%;
     }
 
-    .modal.show-animation {
-        animation: showModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    
+    .modal.hide {
+        animation: hideModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     }
 
-
+    
+    .modal.show {
+        animation: showModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+    
+    
 
 
     // MODAL CONTENT
@@ -62,14 +68,16 @@ const Wrapper = styled.div`
         cursor: pointer;
     }
 
-    .modal-btn:active {
-        background-color: #dc143c;
-        transition: all 0.1s ease-in;
-    }
 
     .modal-btn:hover {
-        transition: all 0.1s ease-in;
+        transition: all 0.2s linear;
         transform: scale(1.1);
+    }
+
+    .modal-btn:active {
+        background-color: #dc143c;
+        transform: scale(1.0);
+        transition: all 0.1s ease-in;
     }
 
 
@@ -81,7 +89,17 @@ const Wrapper = styled.div`
         background-color: transparent;
         border: none;
         margin-bottom: 1px;
+        cursor: pointer;
+
     }
+
+    .modal-center .close:hover {
+        color: #dc143c;
+        transition: all 0.4s linear;
+        transform: rotate(90deg);
+    }
+
+  
 
 
     // MODAL ANIMATION
@@ -96,6 +114,19 @@ const Wrapper = styled.div`
         }
     }
 
+    @keyframes hideModal {
+        0% {
+            transform: translate(-50%, -50%);
+        }
+
+        100% {
+            transform: translate(-0%, -5000%);
+        }
+    }
+
+    
+    
+    
 
 
 
