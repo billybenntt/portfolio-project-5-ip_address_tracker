@@ -4,9 +4,7 @@ import { useSelector } from 'react-redux'
 const Card = () => {
 
   const { country, city, offset, isp, ip } = useSelector(store => store.geolocation.search)
-
-  const timezone = `UTC ${offset}`
-
+  const timezone = offset >= 0 ? `UTC + 0${offset / 3600}:00` : `UTC - 0${Math.abs(offset / 3600)}:00`
 
   return (
     <Wrapper>

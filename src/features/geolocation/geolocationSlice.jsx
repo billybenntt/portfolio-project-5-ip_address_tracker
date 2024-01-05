@@ -12,7 +12,7 @@ const initialState = {
     ip: '60.251.149.222',
     country: 'Taiwan',
     city: 'Taipei',
-    offset: '28000',
+    offset: '28800',
     isp: 'Chungwha Telecom',
     lat: 25.047,
     lon: 121.5319
@@ -76,6 +76,7 @@ const geoLocationSlice = createSlice({
       console.log('getGeoLocation Reducer Fulfilled =>', payload)
       state.search = payload
       state.isLoading = false
+      state.search['query'] = ''
     },
     [getGeoLocation.rejected]: (state, action) => {
       state.isLoading = false
@@ -86,6 +87,7 @@ const geoLocationSlice = createSlice({
     [getAllData.fulfilled]: (state, { payload }) => {
       state.isLoading = false
       state.search = payload
+      state.search['query'] = ''
     },
     [getAllData.rejected]: (state, action) => {
       state.isLoading = true
@@ -96,13 +98,15 @@ const geoLocationSlice = createSlice({
     handleChange: (state, { payload }) => {
       state.search['query'] = payload.inputValue
     },
-    handleSubmit: (state, action) => {
-      console.log('Handle Submit Reducer =>', state.search)
-      console.log('search value is', state.search)
+
+    clearData: (state, action) => {
+      state.isLoading = initialState.isLoading
+      state.search = initialState.search
     }
+
   }
 })
 
 export { getGeoLocation, getAllData }
 export default geoLocationSlice.reducer
-export const { handleChange } = geoLocationSlice.actions
+export const { handleChange, clearData } = geoLocationSlice.actions

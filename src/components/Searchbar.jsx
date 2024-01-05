@@ -1,5 +1,5 @@
 import Wrapper from '../assets/wrappers/SearchBar.jsx'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { FaChevronRight } from 'react-icons/fa'
 import { handleChange } from '../features/geolocation/geolocationSlice.jsx'
 import { getGeoLocation } from '../features/geolocation/geolocationSlice.jsx'
@@ -7,6 +7,7 @@ import { getGeoLocation } from '../features/geolocation/geolocationSlice.jsx'
 function Searchbar () {
 
   const dispatch = useDispatch()
+  const { query } = useSelector(store => store.geolocation.search)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -24,6 +25,7 @@ function Searchbar () {
       <form className="form-center" onSubmit={handleSubmit}>
         <input type="text"
           onChange={handleSearch}
+          value={query}
           placeholder="Search for any IP address or domain"
           className="search-input"/>
 

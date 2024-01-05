@@ -14,34 +14,31 @@ const Wrapper = styled.div`
 
 
     // MODAL MAIN
-
     .modal {
         border-radius: 15px;
         background-color: #fff;
         height: 100px;
-        min-width: 100px;
+        min-width: 110px;
         position: absolute;
-        top: 20%;
+        top: 25%;
         left: 50%;
     }
-
     
-    .modal.hide {
-        animation: hideModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    }
+ 
 
-    
     .modal.show {
         animation: showModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     }
     
-    
+       .modal.hide {
+        animation: hideModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
 
 
     // MODAL CONTENT
 
     .modal-center {
-        width: 320px;
+        width: 330px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -49,7 +46,7 @@ const Wrapper = styled.div`
         color: #000;
         text-align: center;
         border-radius: 15px;
-        padding: 2rem 3rem 2rem;
+        padding: 2rem 3rem 3rem;
     }
 
     .modal-center img {
@@ -124,9 +121,6 @@ const Wrapper = styled.div`
         }
     }
 
-    
-    
-    
 
 
 

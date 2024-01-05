@@ -1,24 +1,25 @@
 import Wrapper from '../assets/wrappers/Modal.jsx'
 import warningIcon from '../assets/loading/warning.svg'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { closeModal } from '../features/modal/modalSlice.jsx'
+import { useState } from 'react'
+import { clearData } from '../features/geolocation/geolocationSlice.jsx'
 
 function Modal () {
-
+  const [className, setClassName] = useState('show')
   const dispatch = useDispatch()
-  const { isOpen } = useSelector(store => store.modal)
-
 
 
   const handleModal = () => {
+    setClassName('hide')
     dispatch(closeModal())
+    dispatch(clearData())
   }
-
 
   return (
     <Wrapper>
       <div className="modal-background">
-        <div className={`modal show`}>
+        <div className={`modal ${className}`}>
           <div className="modal-center">
             <button className="close" onClick={handleModal}>✖</button>
             <img src={warningIcon} alt="cookies-img"/>
