@@ -1,10 +1,10 @@
 {
   "uuid": "824e28c9-ddb4-466f-845a-ef18b5f92e21",
   "lastMigration": 32,
-  "name": "Project 5",
+  "name": "mockAPI",
   "endpointPrefix": "",
   "latency": 0,
-  "port": 3000,
+  "port": 3002,
   "hostname": "",
   "folders": [],
   "routes": [
@@ -13,18 +13,18 @@
       "type": "http",
       "documentation": "",
       "method": "get",
-      "endpoint": "",
+      "endpoint": "tickets",
       "responses": [
         {
           "uuid": "ec7c57a6-6195-4b7f-8c0b-7d0ed6df627b",
-          "body": "{}",
+          "body": "{\n  \"tickets\": [\n    {\n      \"id\": \"1\",\n      \"title\": \"Fix the footer links please\",\n      \"body\": \"Lorem ipsum Triforce sit amet, Linkus Hyruleus tempus Ganondorf. Nunc ocarina sagittis quis Majoras Mask. Nulla in metus arcu. Suspendisse potenti. In vel mauris varius, consectetur Zora ipsum eget, Master Sword porttitor urna. Fusce elementum urna elit, eget eleifend velit consectetur eget. Integer vel lobortis ipsum, vitae auctor Ocarina of Time. Donec sed urna dapibus, interdum magna a, eleifend magna. Curabitur tincidunt enim a neque volutpat. Phasellus auctor magna vel nunc pretium, ut volutpat justo tristique. Pellentesque cursus convallis mauris, in tempus enim tincidunt vitae.\",\n      \"priority\": \"low\",\n      \"user_email\": \"mario@netninja.dev\"\n    },\n    {\n      \"id\": \"2\",\n      \"title\": \"Add in a new stylesheet\",\n      \"body\": \"Lorem ipsum Triforce sit amet, Linkus Hyruleus tempus Ganondorf. Nunc ocarina sagittis quis Majoras Mask. Nulla in metus arcu. Suspendisse potenti. In vel mauris varius, consectetur Zora ipsum eget, Master Sword porttitor urna. Fusce elementum urna elit, eget eleifend velit consectetur eget. Integer vel lobortis ipsum, vitae auctor Ocarina of Time. Donec sed urna dapibus, interdum magna a, eleifend magna. Curabitur tincidunt enim a neque volutpat. Phasellus auctor magna vel nunc pretium, ut volutpat justo tristique. Pellentesque cursus convallis mauris, in tempus enim tincidunt vitae.\",\n      \"priority\": \"medium\",\n      \"user_email\": \"mario@netninja.dev\"\n    },\n    {\n      \"id\": \"3\",\n      \"title\": \"Fix the footer links\",\n      \"body\": \"Lorem ipsum Triforce sit amet, Linkus Hyruleus tempus Ganondorf. Nunc ocarina sagittis quis Majoras Mask. Nulla in metus arcu. Suspendisse potenti. In vel mauris varius, consectetur Zora ipsum eget, Master Sword porttitor urna. Fusce elementum urna elit, eget eleifend velit consectetur eget. Integer vel lobortis ipsum, vitae auctor Ocarina of Time. Donec sed urna dapibus, interdum magna a, eleifend magna. Curabitur tincidunt enim a neque volutpat. Phasellus auctor magna vel nunc pretium, ut volutpat justo tristique. Pellentesque cursus convallis mauris, in tempus enim tincidunt vitae.\",\n      \"priority\": \"high\",\n      \"user_email\": \"peach@netninja.dev\"\n    }\n  ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
           "headers": [],
           "bodyType": "INLINE",
           "filePath": "",
-          "databucketID": "",
+          "databucketID": "kbu4",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -61,6 +61,26 @@
     {
       "key": "Content-Type",
       "value": "application/json"
+    },
+    {
+      "key": "",
+      "value": ""
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    },
+    {
+      "key": "Content-Type",
+      "value": "application/json"
     }
   ],
   "proxyReqHeaders": [
@@ -75,6 +95,14 @@
       "value": ""
     }
   ],
-  "data": [],
+  "data": [
+    {
+      "uuid": "227c9a1c-28a1-4e96-b95e-cebb72b838ff",
+      "id": "kbu4",
+      "name": "localData",
+      "documentation": "",
+      "value": "\r\n  \"tickets\": [\r\n    {\r\n      \"id\": \"1\",\r\n      \"title\": \"Fix the footer links please\",\r\n      \"body\": \"Lorem ipsum Triforce sit amet, Linkus Hyruleus tempus Ganondorf. Nunc ocarina sagittis quis Majoras Mask. Nulla in metus arcu. Suspendisse potenti. In vel mauris varius, consectetur Zora ipsum eget, Master Sword porttitor urna. Fusce elementum urna elit, eget eleifend velit consectetur eget. Integer vel lobortis ipsum, vitae auctor Ocarina of Time. Donec sed urna dapibus, interdum magna a, eleifend magna. Curabitur tincidunt enim a neque volutpat. Phasellus auctor magna vel nunc pretium, ut volutpat justo tristique. Pellentesque cursus convallis mauris, in tempus enim tincidunt vitae.\",\r\n      \"priority\": \"low\",\r\n      \"user_email\": \"mario@netninja.dev\"\r\n    },\r\n    {\r\n      \"id\": \"2\",\r\n      \"title\": \"Add in a new stylesheet\",\r\n      \"body\": \"Lorem ipsum Triforce sit amet, Linkus Hyruleus tempus Ganondorf. Nunc ocarina sagittis quis Majoras Mask. Nulla in metus arcu. Suspendisse potenti. In vel mauris varius, consectetur Zora ipsum eget, Master Sword porttitor urna. Fusce elementum urna elit, eget eleifend velit consectetur eget. Integer vel lobortis ipsum, vitae auctor Ocarina of Time. Donec sed urna dapibus, interdum magna a, eleifend magna. Curabitur tincidunt enim a neque volutpat. Phasellus auctor magna vel nunc pretium, ut volutpat justo tristique. Pellentesque cursus convallis mauris, in tempus enim tincidunt vitae.\",\r\n      \"priority\": \"medium\",\r\n      \"user_email\": \"mario@netninja.dev\"\r\n    },\r\n    {\r\n      \"id\": \"3\",\r\n      \"title\": \"Fix the footer links\",\r\n      \"body\": \"Lorem ipsum Triforce sit amet, Linkus Hyruleus tempus Ganondorf. Nunc ocarina sagittis quis Majoras Mask. Nulla in metus arcu. Suspendisse potenti. In vel mauris varius, consectetur Zora ipsum eget, Master Sword porttitor urna. Fusce elementum urna elit, eget eleifend velit consectetur eget. Integer vel lobortis ipsum, vitae auctor Ocarina of Time. Donec sed urna dapibus, interdum magna a, eleifend magna. Curabitur tincidunt enim a neque volutpat. Phasellus auctor magna vel nunc pretium, ut volutpat justo tristique. Pellentesque cursus convallis mauris, in tempus enim tincidunt vitae.\",\r\n      \"priority\": \"high\",\r\n      \"user_email\": \"peach@netninja.dev\"\r\n    }\r\n  ]\r\n"
+    }
+  ],
   "callbacks": []
 }
