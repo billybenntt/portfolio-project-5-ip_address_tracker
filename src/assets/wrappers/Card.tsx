@@ -35,7 +35,6 @@ const Wrapper = styled.div`
 
     .card-title {
         color: #727171;
-        font-family: 'Rubik', serif;
         font-size: 14px;
         font-style: normal;
         font-weight: 700;
@@ -47,7 +46,6 @@ const Wrapper = styled.div`
 
     .card-data {
         color: #2C2C2C;
-        font-family: 'Rubik', serif;
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
@@ -77,18 +75,16 @@ const Wrapper = styled.div`
 
         .card-title {
             color: #727171;
-            font-family: 'Rubik', serif;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            letter-spacing: 1.75px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 1rem;
         }
 
         .card-data {
             color: #2C2C2C;
-            font-family: 'Rubik', serif;
             padding-right: 0.5rem;
             font-size: 20px;
             font-style: normal;

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-
     margin-left: auto;
     margin-right: auto;
     width: 327px;
@@ -30,7 +29,6 @@ const Wrapper = styled.div`
 
     }
 
-
     .search-input {
         width: 100%;
         font-size: 14px;
@@ -41,6 +39,7 @@ const Wrapper = styled.div`
 
     .search-input::placeholder {
         color: gray;
+        font-family: "JetBrains Mono", monospace;
     }
 
 

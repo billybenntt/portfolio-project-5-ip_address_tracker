@@ -1,19 +1,13 @@
-import Wrapper from '../assets/wrappers/Modal.jsx'
+import Wrapper from '../assets/wrappers/Modal.tsx'
 import warningIcon from '../assets/loading/warning.svg'
-import { useDispatch } from 'react-redux'
-import { closeModal } from '../features/modal/modalSlice.jsx'
 import { useState } from 'react'
-import { clearData } from '../features/geolocation/geolocationSlice.jsx'
 
 function Modal () {
   const [className, setClassName] = useState('show')
-  const dispatch = useDispatch()
 
 
   const handleModal = () => {
     setClassName('hide')
-    dispatch(closeModal())
-    dispatch(clearData())
   }
 
   return (

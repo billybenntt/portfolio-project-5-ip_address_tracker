@@ -3,7 +3,6 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
     position: absolute;
     width: 150px;
-    font-family: 'Rubik', sans-serif, serif;
     display: flex;
     place-items: center;
     align-items: center;

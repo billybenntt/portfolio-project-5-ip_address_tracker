@@ -1,4 +1,4 @@
-import Wrapper from '../assets/wrappers/Loading.jsx'
+import Wrapper from '../assets/wrappers/Loading.tsx'
 import loadingIcon from '../assets/loading/loading.svg'
 
 function Loading () {
