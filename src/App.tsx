@@ -1,10 +1,10 @@
-import Home from './pages/Home.tsx'
+import {Home} from './pages'
 
-function App () {
+function App() {
 
-  return (
-    <Home/>
-  )
+    return (
+        <Home/>
+    )
 }
 
 export default App

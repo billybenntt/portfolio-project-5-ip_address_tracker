@@ -4,7 +4,6 @@ import Wrapper from '../assets/wrappers/Map.tsx'
 function Map() {
 
     const position = [25.284266, 121.5319]
-
     const key = `${position[0]}-${position[1]}`
     const mapAttribution = '<a href="https://www.stadiamaps.com/" target="_blank">StadiaMaps</a>'
     const mapUrl = 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png'

@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
-import { getDataFromLocalStorage} from '../../utils/localStorage.ts'
+import {getDataFromLocalStorage} from '../../utils/localStorage.ts'
 
 /// INITIAL STATE
 const initialState = {
@@ -44,7 +44,7 @@ const geoLocationSlice = createSlice({
     initialState,
     reducers: {
         handleChange: (state, {payload}) => {
-            state.search['query'] = payload.inputValue
+            state.search.query = payload.inputValue
         },
         clearData: (state, action) => {
             console.log(action)
@@ -55,11 +55,14 @@ const geoLocationSlice = createSlice({
 
     extraReducers: (builder) => {
         builder.addCase(getAllData.pending, (state) => {
+            state.isLoading = true
             console.log('pending', state)
         }).addCase(getAllData.fulfilled, (state, action) => {
+            state.isLoading = false
             console.log('fulfilled', state)
             console.log('fulfilled', action)
         }).addCase(getAllData.rejected, (state) => {
+            state.isLoading = false
             console.log('rejected', state)
         })
     },

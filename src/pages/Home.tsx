@@ -1,12 +1,9 @@
 import {useEffect} from 'react'
 import Wrapper from '../assets/wrappers/Home.tsx'
-import Searchbar from '../components/Searchbar.tsx'
-import Card from '../components/Card.jsx'
-import Map from '../components/Map.tsx'
-import Modal from '../components/Modal.tsx'
-import Loading from '../components/Loading.tsx'
+import {Searchbar, Card, Map, Modal, Loading} from '../components'
 import {useAppDispatch, useAppSelector} from '../store/hooks.ts';
 import {getAllData} from '../features/geolocation/geolocationSlice.tsx'
+
 
 function HomePage() {
 
@@ -17,9 +14,10 @@ function HomePage() {
     console.log(isOpen)
 
     useEffect(() => {
-        /* Effect */
         dispatch(getAllData())
     }, [dispatch])
+
+
 
     return (
         <Wrapper>
