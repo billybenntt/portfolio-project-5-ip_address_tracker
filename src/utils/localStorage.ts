@@ -1,8 +1,8 @@
-const addDataToLocalStorage = (data: any) => {
+const addDataToLocalStorage = (data: object): void => {
     localStorage.setItem('ip', JSON.stringify(data))
 }
 
-const removeDataFromLocalStorage = () => {
+const removeDataFromLocalStorage = (): void => {
     localStorage.removeItem('ip')
 }
 

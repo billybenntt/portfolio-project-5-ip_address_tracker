@@ -2,7 +2,7 @@ import {useEffect} from 'react'
 import Wrapper from '../assets/wrappers/Home.tsx'
 import {Searchbar, Card, Map, Modal, Loading} from '../components'
 import {useAppDispatch, useAppSelector} from '../store/hooks.ts';
-import {getAllData} from '../features/geolocation/geolocationSlice.tsx'
+import {getAllData} from '../features/geolocation/geolocationSlice.ts'
 
 function HomePage() {
 

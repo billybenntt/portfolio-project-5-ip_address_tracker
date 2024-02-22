@@ -1,6 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit'
-import modalReducer from '../features/modal/modalSlice.jsx'
-import geoLocationReducer from '../features/geolocation/geolocationSlice.jsx'
+import modalReducer from '../features/modal/modalSlice.ts'
+import geoLocationReducer from '../features/geolocation/geolocationSlice.ts'
 
 export const store = configureStore({
     reducer: {
