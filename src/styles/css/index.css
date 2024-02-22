@@ -101,6 +101,7 @@ a {
 a,
 button {
     line-height: 1.15;
+    all: unset;
 }
 
 button:disabled {

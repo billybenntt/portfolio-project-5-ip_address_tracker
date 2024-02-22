@@ -4,19 +4,16 @@ import {Searchbar, Card, Map, Modal, Loading} from '../components'
 import {useAppDispatch, useAppSelector} from '../store/hooks.ts';
 import {getAllData} from '../features/geolocation/geolocationSlice.tsx'
 
-
 function HomePage() {
 
     const dispatch = useAppDispatch()
     const {isLoading} = useAppSelector(store => store.geolocation)
     const {isOpen} = useAppSelector(store => store.modal)
 
-    console.log(isOpen)
 
     useEffect(() => {
         dispatch(getAllData())
     }, [dispatch])
-
 
 
     return (

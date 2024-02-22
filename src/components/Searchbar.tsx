@@ -1,15 +1,16 @@
 import Wrapper from '../assets/wrappers/SearchBar.tsx'
 import {useAppSelector} from '../store/hooks.ts';
+import {SubmitFormEvent, ChangeFormEvent} from "../types/app";
 
 function Searchbar() {
     // const dispatch = useAppDispatch()
     const {query} = useAppSelector(store => store.geolocation.search)
 
-    const handleSubmit = (event: any) => {
+    const handleSubmit = (event: SubmitFormEvent) => {
         event.preventDefault()
     }
 
-    const handleSearch = (event: any) => {
+    const handleSearch = (event: ChangeFormEvent) => {
 
         console.log(event)
         // const inputName = event.target.name
@@ -26,9 +27,9 @@ function Searchbar() {
                     placeholder="Search for any IP address or domain"
                     className="search-input"/>
 
-                <div className="btn-container" onClick={handleSubmit}>
+                <button className="btn-container" type="submit" onClick={handleSubmit}>
                     {/*<FaChevronRight/>*/}
-                </div>
+                </button>
 
             </form>
         </Wrapper>
