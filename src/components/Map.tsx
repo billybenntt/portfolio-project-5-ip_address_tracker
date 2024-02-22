@@ -3,27 +3,28 @@ import Wrapper from '../assets/wrappers/Map.tsx'
 
 function Map() {
 
-    const latitude = '25.284266'
-    const longitude = '121.5319'
+    const position = [25.284266, 121.5319]
 
-    const position = [latitude, longitude]
-
-    // re render map
-    const key = `${latitude}-${longitude}`
+    const key = `${position[0]}-${position[1]}`
     const mapAttribution = '<a href="https://www.stadiamaps.com/" target="_blank">StadiaMaps</a>'
-    const mapUrl = 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.{ext}'
+    const mapUrl = 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png'
 
     return (
         <Wrapper>
-            <MapContainer center={position} key={key} zoomControl={true} zoom={14} scrollWheelZoom={false} className="map-container">
+            <MapContainer
+                key={key}
+                center={[position[0], position[1]]}
+                zoom={14}
+                zoomControl={true}
+                scrollWheelZoom={false}
+                className="map-container">
                 <TileLayer
                     attribution={mapAttribution}
                     url={mapUrl}
-                    ext={'png'}
                 />
-                <Marker position={position}>
+                <Marker position={[position[0], position[1]]}>
                     <Popup>
-                        A pretty CSS3 popup. <br/> Easily customizable.
+                        This is your current <br/> Location.
                     </Popup>
                 </Marker>
             </MapContainer>

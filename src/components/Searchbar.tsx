@@ -1,5 +1,5 @@
 import Wrapper from '../assets/wrappers/SearchBar.tsx'
-import {useAppDispatch, useAppSelector} from '../store/hooks.ts';
+import {useAppSelector} from '../store/hooks.ts';
 
 function Searchbar() {
     // const dispatch = useAppDispatch()
@@ -10,8 +10,10 @@ function Searchbar() {
     }
 
     const handleSearch = (event: any) => {
-        const inputName = event.target.name
-        const inputValue = event.target.value
+
+        console.log(event)
+        // const inputName = event.target.name
+        // const inputValue = event.target.value
         // dispatch(handleChange({inputName, inputValue}))
     }
 
