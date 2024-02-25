@@ -2,11 +2,11 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import {getDataFromLocalStorage} from '../../utils/localStorage.ts'
 
 /// INITIAL STATE
-const initialState = {
+const initialState: any = {
     isLoading: false,
     search: {
-        status: '',
-        query: '',
+        query: "",
+        status: "",
         ip: '60.251.149.222',
         latitude: 25.047,
         longitude: 121.5319
@@ -18,7 +18,6 @@ const getAllData = createAsyncThunk('geolocation/getAllData', async (_, thunkAPI
     try {
         const storedData = getDataFromLocalStorage('ip')
         if (!storedData) {
-
             return initialState
         }
         return storedData
@@ -44,7 +43,8 @@ const geoLocationSlice = createSlice({
     initialState,
     reducers: {
         handleChange: (state, {payload}) => {
-            state.search.query = payload.inputValue
+            const {inputName, inputValue} = payload
+            state.search[inputName] = inputValue
         },
         clearData: (state, action) => {
             console.log(action)
