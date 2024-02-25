@@ -35,7 +35,7 @@ function SearchBar() {
                     maxLength={35}
                     name="query"
                     title="📝Enter a valid IP address or domain eg. google.com"
-                    minLength={4}
+                    minLength={10}
                     value={query}
                     required={true}
                     autoFocus={false}
@@ -44,7 +44,6 @@ function SearchBar() {
                     placeholder="Search for any IP address or domain"
                     className="search-input"
                 />
-
                 <button className="btn-container" type="submit">
                     <SearchIcon/>
                 </button>

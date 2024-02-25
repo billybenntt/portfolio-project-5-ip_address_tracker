@@ -16,11 +16,12 @@ const Wrapper = styled.div`
         border: 3px solid #4f59b9;
         border-radius: 1rem;
         transition: all 350ms ease-in-out
+
     }
 
 
     .form-center::before {
-        content: "Enter a valid url or IP";
+        content: "";
         font-size: 10px;
         padding: 0.5rem;
         position: absolute;
@@ -31,7 +32,17 @@ const Wrapper = styled.div`
     }
 
 
+    .form-center:valid {
+        .search-input {
+            color: #081028;
+        }
+    }
+
     .form-center:active:valid {
+        &::before {
+            content: "Looks good ✅";
+            visibility: visible;
+        }
         .btn-container {
             color: #90EE90FF;
         }
@@ -39,18 +50,21 @@ const Wrapper = styled.div`
 
 
     .form-center:hover:invalid {
-        border: 3px solid #4643a0;
+        border: 3px solid #5986e7;
+
         &::before {
+            content: "Please Enter a valid url or IP";
             visibility: visible;
         }
+
         .search-input::placeholder {
             color: #808080;
         }
+
         .btn-container {
             cursor: not-allowed;
-            background-color: #4643a0;
-            color: #808080;
-         
+            background-color: #000;
+            color: #fff;
         }
     }
 
