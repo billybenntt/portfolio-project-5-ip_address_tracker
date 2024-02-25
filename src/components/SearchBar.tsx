@@ -1,8 +1,9 @@
 import Wrapper from '../assets/wrappers/SearchBar.tsx'
 import {useAppSelector} from '../store/hooks.ts';
 import {SubmitFormEvent, ChangeFormEvent} from "../types/app";
+import SearchIcon from "../assets/SearchIcon.tsx";
 
-function Searchbar() {
+function SearchBar() {
     // const dispatch = useAppDispatch()
     const {query} = useAppSelector(store => store.geolocation.search)
 
@@ -22,13 +23,17 @@ function Searchbar() {
         <Wrapper>
             <form className="form-center" onSubmit={handleSubmit}>
                 <input type="text"
-                    onChange={handleSearch}
+                    pattern="(https?:\/\/(www\.)?)?((([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)+([a-zA-Z]{2,}))|((\d{1,3}\.){3}\d{1,3})"
+                    maxLength={35}
+                    minLength={4}
                     value={query}
+                    onChange={handleSearch}
                     placeholder="Search for any IP address or domain"
-                    className="search-input"/>
+                    className="search-input"
+                />
 
                 <button className="btn-container" type="submit" onClick={handleSubmit}>
-                    {/*<FaChevronRight/>*/}
+                    <SearchIcon/>
                 </button>
 
             </form>
@@ -36,4 +41,4 @@ function Searchbar() {
     )
 }
 
-export default Searchbar
+export default SearchBar

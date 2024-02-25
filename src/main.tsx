@@ -1,4 +1,4 @@
-import '/src/styles/css/index.css'
+import '/src/styles/css/global.css'
 import App from './App.tsx'
 import 'leaflet/dist/leaflet.css'
 import ReactDOM from 'react-dom/client'
