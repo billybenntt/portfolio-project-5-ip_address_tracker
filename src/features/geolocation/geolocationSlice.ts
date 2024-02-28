@@ -24,7 +24,7 @@ const getGeoLocation = createAsyncThunk('geolocation/getGeoLocation',
 
         const urlEndpoint = import.meta.env.VITE_ENDPOINT
 
-        console.log(urlEndpoint)
+        console.log("urlEndpoint", urlEndpoint)
 
         try {
             const storedData = getDataFromLocalStorage('ip')
