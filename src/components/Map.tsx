@@ -1,9 +1,11 @@
-import {MapContainer, Marker, Popup, TileLayer} from 'react-leaflet'
+import {MapContainer, Marker, TileLayer, Tooltip} from 'react-leaflet'
 import Wrapper from '../assets/wrappers/Map.tsx'
+import {useAppSelector} from '../store/hooks.ts';
 
 function Map() {
 
-    const position = [25.284266, 121.5319]
+    const {latitude, longitude} = useAppSelector(store => store.geolocation.search)
+    const position = [latitude, longitude]
     const key = `${position[0]}-${position[1]}`
     const mapAttribution = '<a href="https://www.stadiamaps.com/" target="_blank">StadiaMaps</a>'
     const mapUrl = 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png'
@@ -22,9 +24,10 @@ function Map() {
                     url={mapUrl}
                 />
                 <Marker position={[position[0], position[1]]}>
-                    <Popup>
-                        This is your current <br/> Location.
-                    </Popup>
+                    <Tooltip permanent direction={"bottom"} offset={[0, 40]}>
+                        This is your approximate Location: <br/>
+                        {`Latitude:  ${position[0]} Longitude:  ${position[1]}`}
+                    </Tooltip>
                 </Marker>
             </MapContainer>
         </Wrapper>

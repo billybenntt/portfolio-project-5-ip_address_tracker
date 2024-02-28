@@ -2,7 +2,7 @@ import Wrapper from '../assets/wrappers/SearchBar.tsx'
 import {useAppSelector, useAppDispatch} from '../store/hooks.ts';
 import {SubmitFormEvent, ChangeFormEvent} from "../types/app";
 import SearchIcon from "../assets/SearchIcon.tsx";
-import {handleChange} from "../features/geolocation/geolocationSlice.ts";
+import {handleChange, searchGeoLocation} from "../features/geolocation/geolocationSlice.ts";
 
 function SearchBar() {
     const dispatch = useAppDispatch()
@@ -14,6 +14,8 @@ function SearchBar() {
         const isValid = formElement.checkValidity()
 
         console.log(isValid)
+        dispatch(searchGeoLocation())
+
 
     }
 
