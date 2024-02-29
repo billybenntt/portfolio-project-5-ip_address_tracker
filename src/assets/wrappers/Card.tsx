@@ -12,6 +12,7 @@ const Wrapper = styled.div`
     border-radius: 15px;
     padding: 1.5rem;
     box-shadow: 0 50px 50px -25px rgba(0, 0, 0, 0.10);
+    width: 100%;
     max-width: 327px;
 
 
@@ -58,6 +59,7 @@ const Wrapper = styled.div`
         height: 161px;
         top: 210px;
         padding: 2rem;
+
         max-width: 768px;
         .card-center {
             display: flex;
