@@ -6,7 +6,7 @@ import {handleChange, searchGeoLocation} from "../features/geolocation/geolocati
 
 function SearchBar() {
     const dispatch = useAppDispatch()
-    const {query} = useAppSelector(store => store.geolocation.search)
+    const {query} = useAppSelector(store => store.geolocation)
 
     const handleSubmit = (event: SubmitFormEvent) => {
         event.preventDefault()
@@ -20,20 +20,16 @@ function SearchBar() {
     }
 
     const handleSearch = (event: ChangeFormEvent) => {
-        const inputName = event.target.name
         const inputValue = event.target.value
-        dispatch(handleChange({inputName, inputValue}))
+        dispatch(handleChange({inputValue}))
     }
-
-
-
 
 
     return (
         <Wrapper>
             <form className="form-center" onSubmit={handleSubmit}>
                 <input type="text"
-                    pattern="(https?:\/\/(www\.)?)?((([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)+([a-zA-Z]{2,}))|((\d{1,3}\.){3}\d{1,3})"
+                    pattern="(https?:\/\/(www\.)?)?((([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)+([a-zA-Z]{2,}))|((?!192\.168)(\d{1,3}\.){3}\d{1,3})"
                     maxLength={35}
                     name="query"
                     title="📝Enter a valid IP address or domain eg. google.com"

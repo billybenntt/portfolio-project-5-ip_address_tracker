@@ -1,43 +1,47 @@
 export default [
     {
-        "ip": "60.251.149.199",
+        "ip_address": "60.251.149.199",
+        "city": "New Taipei",
+        "city_geoname_id": 1665148,
+        "region": "New Taipei",
+        "region_iso_code": "NWT",
+        "region_geoname_id": 1665148,
+        "postal_code": null,
+        "country": "Taiwan",
+        "country_code": "TW",
+        "country_geoname_id": 1668284,
+        "country_is_eu": false,
+        "continent": "Asia",
         "continent_code": "AS",
-        "continent_name": "Asia",
-        "country_code2": "TW",
-        "country_code3": "TWN",
-        "country_name": "Taiwan",
-        "country_name_official": "Republic of China",
-        "country_capital": "Taipei",
-        "state_prov": "Taipei City",
-        "state_code": "TW-TPE",
-        "district": "",
-        "city": "Taipei City",
-        "zipcode": "110",
-        "latitude": "25.03372",
-        "longitude": "121.56481",
-        "is_eu": false,
-        "calling_code": "+886",
-        "country_tld": ".tw",
-        "languages": "zh-TW,zh,nan,hak",
-        "country_flag": "https://ipgeolocation.io/static/flags/tw_64.png",
-        "geoname_id": "10272931",
-        "isp": "twnic.net.tw",
-        "connection_type": "",
-        "organization": "Chunghwa Telecom Co., Ltd.",
-        "country_emoji": "🇹🇼",
-        "currency": {
-            "code": "TWD",
-            "name": "New Taiwan Dollar",
-            "symbol": "NT$"
+        "continent_geoname_id": 6255147,
+        "longitude": 121.586,
+        "latitude": 24.9466,
+        "security": {
+            "is_vpn": false
         },
-        "time_zone": {
+        "timezone": {
             "name": "Asia/Taipei",
-            "offset": 8,
-            "offset_with_dst": 8,
-            "current_time": "2024-02-29 09:50:29.306+0800",
-            "current_time_unix": 1709171429.306,
-            "is_dst": false,
-            "dst_savings": 0
+            "abbreviation": "CST",
+            "gmt_offset": 8,
+            "current_time": "13:20:56",
+            "is_dst": false
+        },
+        "flag": {
+            "emoji": "🇹🇼",
+            "unicode": "U+1F1F9 U+1F1FC",
+            "png": "https://static.abstractapi.com/country-flags/TW_flag.png",
+            "svg": "https://static.abstractapi.com/country-flags/TW_flag.svg"
+        },
+        "currency": {
+            "currency_name": "Dollar",
+            "currency_code": "TWD"
+        },
+        "connection": {
+            "autonomous_system_number": 3462,
+            "autonomous_system_organization": "Data Communication Business Group",
+            "connection_type": "Corporate",
+            "isp_name": "Chunghwa Telecom Co., Ltd.",
+            "organization_name": "Chunghwa Telecom Co. Ltd."
         }
     }
 ]

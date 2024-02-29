@@ -1,9 +1,11 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
-import {getDataFromLocalStorage, addDataToLocalStorage} from '../../utils/localStorage.ts'
-
+import {getDataFromLocalStorage, addDataToLocalStorage, removeDataFromLocalStorage} from '../../utils/localStorage.ts'
+import ProcessQuery from "../../utils/processQuery.ts";
+import {RootState} from "../../store/store.ts";
+import {GeolocationState} from "../../types/app"
 
 /// INITIAL STATE
-const initialState: any = {
+const initialState: GeolocationState = {
     isLoading: false,
     query: "",
     search: {
@@ -23,8 +25,6 @@ const getGeoLocation = createAsyncThunk('geolocation/getGeoLocation',
     async (_, thunkAPI) => {
 
         const urlEndpoint = import.meta.env.VITE_ENDPOINT
-
-        console.log("urlEndpoint", urlEndpoint)
 
         try {
             const storedData = getDataFromLocalStorage('ip')
@@ -50,6 +50,16 @@ const getGeoLocation = createAsyncThunk('geolocation/getGeoLocation',
 const searchGeoLocation = createAsyncThunk('geolocation/searchGeoLocation', async (_, thunkAPI) => {
     try {
 
+        const state = thunkAPI.getState() as RootState
+        const urlEndpoint = import.meta.env.VITE_ENDPOINT
+        const result = await ProcessQuery(state.geolocation.query)
+        if (result.type !== 'invalid') {
+            const response = await fetch(urlEndpoint + `&ip_address=${result.ip}`)
+            const newData = await response.json()
+            removeDataFromLocalStorage()
+            addDataToLocalStorage(newData)
+            return newData
+        }
 
         return []
     } catch (error) {
@@ -63,8 +73,8 @@ const geoLocationSlice = createSlice({
     initialState,
     reducers: {
         handleChange: (state, {payload}) => {
-            const {inputName, inputValue} = payload
-            state[inputName] = inputValue
+            const {inputValue} = payload
+            state.query = inputValue
         },
         clearData: (state) => {
             state.isLoading = initialState.isLoading
@@ -75,22 +85,30 @@ const geoLocationSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(searchGeoLocation.pending, (state) => {
             state.isLoading = true
-        }).addCase(searchGeoLocation.fulfilled, (state) => {
+        }).addCase(searchGeoLocation.fulfilled, (state, {payload}) => {
+            const {ip_address, connection, latitude, longitude, city, country, timezone} = payload
             state.isLoading = false
+            state.search.ip = ip_address
+            state.search.isp = connection.isp_name
+            state.search.latitude = latitude
+            state.search.longitude = longitude
+            state.search.city = city
+            state.search.country = country
+            state.search.timezone = timezone.name
         }).addCase(searchGeoLocation.rejected, (state) => {
             state.isLoading = false
         }).addCase(getGeoLocation.pending, (state) => {
             state.isLoading = true
         }).addCase(getGeoLocation.fulfilled, (state, {payload}) => {
-            const {query, isp, lat, lon, city, country, timezone} = payload
+            const {ip_address, connection, latitude, longitude, city, country, timezone} = payload
             state.isLoading = false
-            state.search.ip = query
-            state.search.isp = isp
-            state.search.latitude = lat
-            state.search.longitude = lon
+            state.search.ip = ip_address
+            state.search.isp = connection.isp_name
+            state.search.latitude = latitude
+            state.search.longitude = longitude
             state.search.city = city
             state.search.country = country
-            state.search.timezone = timezone
+            state.search.timezone = JSON.stringify(timezone)
         }).addCase(getGeoLocation.rejected, (state) => {
             state.isLoading = false
             state.search.ip = "0.0.0.0"
@@ -107,4 +125,4 @@ const geoLocationSlice = createSlice({
 
 export {getGeoLocation, searchGeoLocation}
 export default geoLocationSlice.reducer
-export const {handleChange, clearData} = geoLocationSlice.actions
+export const {handleChange} = geoLocationSlice.actions
