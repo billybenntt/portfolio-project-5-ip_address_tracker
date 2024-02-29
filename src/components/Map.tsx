@@ -15,7 +15,7 @@ function Map() {
             <MapContainer
                 key={key}
                 center={[position[0], position[1]]}
-                zoom={14}
+                zoom={6}
                 zoomControl={true}
                 scrollWheelZoom={false}
                 className="map-container">
