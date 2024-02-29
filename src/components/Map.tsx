@@ -1,4 +1,4 @@
-import {MapContainer, Marker, TileLayer, Tooltip} from 'react-leaflet'
+import {MapContainer, Marker, Popup, TileLayer} from 'react-leaflet'
 import Wrapper from '../assets/wrappers/Map.tsx'
 import {useAppSelector} from '../store/hooks.ts';
 
@@ -24,10 +24,11 @@ function Map() {
                     url={mapUrl}
                 />
                 <Marker position={[position[0], position[1]]}>
-                    <Tooltip permanent direction={"bottom"} offset={[0, 40]}>
+                    <Popup>
                         This is your approximate Location: <br/>
                         {`Latitude:  ${position[0]} Longitude:  ${position[1]}`}
-                    </Tooltip>
+                    </Popup>
+
                 </Marker>
             </MapContainer>
         </Wrapper>

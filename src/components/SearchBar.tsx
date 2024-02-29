@@ -13,8 +13,10 @@ function SearchBar() {
         const formElement = event.target as HTMLFormElement
         const isValid = formElement.checkValidity()
 
-        console.log(isValid)
-        dispatch(searchGeoLocation())
+
+        if (isValid) {
+            dispatch(searchGeoLocation())
+        }
 
 
     }

@@ -25,7 +25,7 @@ async function ProcessQuery(query: string) {
 
     return {
         type: "invalid",
-        ip: query
+        ip: "8.8.8.8"
     }
 
 }

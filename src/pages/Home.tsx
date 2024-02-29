@@ -1,6 +1,6 @@
 import {useEffect} from 'react'
 import Wrapper from '../assets/wrappers/Home.tsx'
-import {Searchbar, Card, Map, Modal, Loading} from '../components'
+import {Searchbar, Card, Map, Loading} from '../components'
 import {useAppDispatch, useAppSelector} from '../store/hooks.ts';
 import {getGeoLocation} from '../features/geolocation/geolocationSlice.ts'
 
@@ -8,7 +8,6 @@ function HomePage() {
 
     const dispatch = useAppDispatch()
     const {isLoading} = useAppSelector(store => store.geolocation)
-    const {isOpen} = useAppSelector(store => store.modal)
 
 
     useEffect(() => {
@@ -18,7 +17,6 @@ function HomePage() {
 
     return (
         <Wrapper>
-            {isOpen ? <Modal/> : ''}
             <section className="header">
                 {isLoading ? <Loading/> : ''}
                 <div className="header-center">
