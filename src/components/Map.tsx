@@ -1,6 +1,16 @@
-import {MapContainer, Marker, Popup, TileLayer} from 'react-leaflet'
+import {MapContainer, Marker, Popup, TileLayer,} from 'react-leaflet'
 import Wrapper from '../assets/wrappers/Map.tsx'
 import {useAppSelector} from '../store/hooks.ts';
+import L from 'leaflet';
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+const defIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow
+});
+
+L.Marker.prototype.options.icon = defIcon;
 
 function Map() {
 
@@ -9,6 +19,7 @@ function Map() {
     const key = `${position[0]}-${position[1]}`
     const mapAttribution = '<a href="https://www.stadiamaps.com/" target="_blank">StadiaMaps</a>'
     const mapUrl = 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png'
+
 
     return (
         <Wrapper>
@@ -30,6 +41,8 @@ function Map() {
                     </Popup>
 
                 </Marker>
+
+
             </MapContainer>
         </Wrapper>
     )
