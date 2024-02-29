@@ -13,7 +13,6 @@ const initialState: GeolocationState = {
         isp: "",
         latitude: 25.047,
         longitude: 121.5319,
-        city: "",
         country: "",
         timezone: ""
     }
@@ -86,36 +85,33 @@ const geoLocationSlice = createSlice({
         builder.addCase(searchGeoLocation.pending, (state) => {
             state.isLoading = true
         }).addCase(searchGeoLocation.fulfilled, (state, {payload}) => {
-            const {ip_address, connection, latitude, longitude, city, country, timezone} = payload
+            const {ip_address, connection, latitude, longitude, country, timezone: {name}} = payload
             state.isLoading = false
             state.search.ip = ip_address
             state.search.isp = connection.isp_name
             state.search.latitude = latitude
             state.search.longitude = longitude
-            state.search.city = city
             state.search.country = country
-            state.search.timezone = timezone.name
+            state.search.timezone = name
         }).addCase(searchGeoLocation.rejected, (state) => {
             state.isLoading = false
         }).addCase(getGeoLocation.pending, (state) => {
             state.isLoading = true
         }).addCase(getGeoLocation.fulfilled, (state, {payload}) => {
-            const {ip_address, connection, latitude, longitude, city, country, timezone} = payload
+            const {ip_address, connection, latitude, longitude, country, timezone: {name}} = payload
             state.isLoading = false
             state.search.ip = ip_address
             state.search.isp = connection.isp_name
             state.search.latitude = latitude
             state.search.longitude = longitude
-            state.search.city = city
             state.search.country = country
-            state.search.timezone = JSON.stringify(timezone)
+            state.search.timezone = name
         }).addCase(getGeoLocation.rejected, (state) => {
             state.isLoading = false
             state.search.ip = "0.0.0.0"
             state.search.isp = "Unknown"
             state.search.latitude = 0.000
             state.search.longitude = 0.000
-            state.search.city = "Taipei"
             state.search.country = "Taiwan"
             state.search.timezone = "Asia/Taipei"
         })

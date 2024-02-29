@@ -3,7 +3,7 @@ import {useAppSelector} from '../store/hooks.ts';
 
 const Card = () => {
 
-    const {ip, country, isp, city, timezone} = useAppSelector(store => store.geolocation.search)
+    const {ip, country, isp, timezone} = useAppSelector(store => store.geolocation.search)
 
     return (
         <Wrapper>
@@ -14,7 +14,7 @@ const Card = () => {
                 </div>
                 <div className="card">
                     <h5 className="card-title">Country</h5>
-                    <p className="card-data">{city}, {country}</p>
+                    <p className="card-data">{country}</p>
                 </div>
                 <div className="card">
                     <h5 className="card-title">Timezone</h5>

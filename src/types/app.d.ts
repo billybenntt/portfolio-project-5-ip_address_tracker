@@ -10,7 +10,6 @@ interface GeolocationState {
     search: {
         ip: string,
         isp: string,
-        city: string,
         country: string,
         timezone: string
         latitude: number,
