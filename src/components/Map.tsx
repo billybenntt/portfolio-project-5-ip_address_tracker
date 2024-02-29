@@ -26,8 +26,9 @@ function Map() {
             <MapContainer
                 key={key}
                 center={[position[0], position[1]]}
-                zoom={6}
+                zoom={8}
                 zoomControl={true}
+                dragging={false}
                 scrollWheelZoom={false}
                 className="map-container">
                 <TileLayer
