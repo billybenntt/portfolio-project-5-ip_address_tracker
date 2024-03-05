@@ -59,7 +59,6 @@ const Wrapper = styled.div`
         height: 161px;
         top: 210px;
         padding: 2rem;
-
         max-width: 768px;
         .card-center {
             display: flex;
