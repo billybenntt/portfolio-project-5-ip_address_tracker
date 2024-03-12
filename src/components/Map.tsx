@@ -18,7 +18,7 @@ function Map() {
     const position = [latitude, longitude]
     const key = `${position[0]}-${position[1]}`
     const mapAttribution = '<a href="https://www.stadiamaps.com/" target="_blank">StadiaMaps</a>'
-    const mapUrl = 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png'
+    const mapUrl = 'https://{s}.tile.osm.org/{z}/{x}/{y}.png'
 
 
     return (
@@ -26,7 +26,7 @@ function Map() {
             <MapContainer
                 key={key}
                 center={[position[0], position[1]]}
-                zoom={8}
+                zoom={12}
                 zoomControl={true}
                 dragging={false}
                 scrollWheelZoom={false}
